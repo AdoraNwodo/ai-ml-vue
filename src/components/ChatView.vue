@@ -32,24 +32,24 @@ export default {
           console.log("Sending JSON...");
           console.log(dataToSend);
 
-          const response = await fetch('https://euaut2oy0jfcle-8000.proxy.runpod.net/v1/chat', {
+          const response = await fetch('https://afypd460k2b6zz-8000.proxy.runpod.net/v1/chat', {
             method: 'POST',
-            mode: 'no-cors',
+            mode: 'cors',
             headers: {
               'Content-Type': 'application/json',
               'accept': 'application/json'
             },
             body: JSON.stringify(dataToSend)
           });
-          console.log("I'm back!");
-          console.log(response);
-          /*if (!response.ok) {
+          if (!response.ok) {
             console.log(response);
+            this.response = 'Sorry, we cannot generate a response at this time'
             throw new Error('Network response was not ok');
-          }*/
+          }
           
-          // const responseData = await response.json();
-          // console.log(responseData.text);
+          const responseData = await response.json();
+          this.response = responseData.text[0];
+
         } catch (error) {
           console.error('Error sending POST request:', error);
         }

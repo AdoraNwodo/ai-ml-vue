@@ -1,14 +1,14 @@
 <template>
-  <HelloWorld />
+  <ChatView />
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
+import ChatView from './components/ChatView.vue'
 
 export default {
   name: 'App',
   components: {
-    HelloWorld
+    ChatView
   }
 }
 </script>
