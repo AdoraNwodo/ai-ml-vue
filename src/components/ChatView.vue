@@ -38,6 +38,8 @@ export default {
         try {
           const dataToSend = { "prompt": _prompt };
           const apiUrl = process.env.VUE_APP_BACKEND_DNS
+          
+          console.log(`API URL - ${apiUrl}`)
 
           const response = await fetch(apiUrl, {
             method: 'POST',
