@@ -21,6 +21,7 @@ project = vercel.Project("vercel-project",
         repo = repoName,
         type = repoType
     ),
+    root_directory = "./src/app/katwalk-frontend",
     opts = pulumi.ResourceOptions(
         provider = provider
     )
